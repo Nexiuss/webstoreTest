@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>vue.js Test</title>
+    <script src="js/vue.min.js"></script>
+    <!--<link href="/js/css/css.css" />-->
+    <style>
+    .test ul{list-style:none;}
+    .test li{
+        float: left;
+        width: 30px;
+    }
+    .test a:link{
+        color: #E91E63;
+        background: #FFF;
+        text-decoration: none;
+    }
+    .test a:visited{
+        color: blue;
+        text-decoration: underline;
+    }
+    .test a:hover{
+        /*color: #FFF; */
+        font-weight: bold;
+        text-decoration:underline;
+        background-color: #F00;
+    }
+    .active:link{background: #B5C9DA;}
+    </style>
+</head>
+<body>
+<div id="app">
+    <h3>vue.js条件判断 v-if</h3>
+    {{ message }}<br>
+    <label v-html="message"></label><br>
+    <label v-if="isSee">我有一种小毛驴从来也不骑<br></label>
+    <label>{{name}}</label><br>
+    <label v-if="age<=12">Age:{{age}}</label><br>
+
+    <h3>vue.js双向绑定</h3>
+    <p>{{text}}</p>
+    <input type="text" v-model="text">
+
+    <h3>v-show</h3>
+    <label v-show="isSee" v-html="message"></label><!--consolg打命令 exampleDate.isSee=true-->
+    <label v-show="yes">我有一只小毛驴从来也不骑</label>
+    <label v-show="isSee">我有一只小毛驴从来也不骑</label>
+
+    <h3>v-else</h3>
+    <label v-if="age>=18">
+        <p>年龄大于18岁</p>
+    </label>
+    <label v-else>
+        <p>年龄18岁以下</p>
+    </label>
+
+    <label v-show="age>=18">
+        <p>年龄大于18岁</p>
+    </label>
+    <label v-else>
+        <p>年龄18岁以下</p>
+    </label>
+
+    <h3> v-for</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Sex</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="person in people">
+            <td>{{ person.name }}</td>
+            <td>{{ person.age }}</td>
+            <td>{{ person.sex }}</td>
+        </tr>
+        </tbody>
+    </table>
+<div class="test">
+    <h3>v-blind</h3>
+    <ul> <li v-for="n in pageCount"> <a href="javascripit:void(0)" v-bind:class="activeNumber === n ? 'active' : ''">{{ n  }}</a> </li> </ul>
+</div>
+    </div>
+</body>
+<script src="js/vue.min.js"></script>
+<script>
+    // 这是我们的Model
+    var exampleData = {
+        message: 'Hello World!',
+        isSee: false,
+        age: 12,
+        name: 'yang.xu',
+        text:'text',
+        yes: 'true',
+        no: 'false',
+        people: [{ name: 'Jack', age: 30, sex: 'Male' }, { name: 'Bill', age: 26, sex: 'Male' }, { name: 'Tracy', age: 22, sex: 'Female' }, { name: 'Chris', age: 36, sex: 'Male' }],
+        activeNumber: 1, pageCount: 10 //用于分页
+    }
+
+    // 创建一个 Vue 实例或 "ViewModel"
+    // 它连接 View 与 Model
+    new Vue({
+        el: '#app',
+        data: exampleData
+    });
+</script>
+</html>

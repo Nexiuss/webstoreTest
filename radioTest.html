@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+       $(function(){
+            var index2 = document.getElementsByName('parking_index');
+                    
+            $("input[name='parking_index'][value='1']").prop('checked', true);
+            var indexRadios = $("parking_index");
+            var i = $("input[name='parking_index'][value='1']");
+            alert(i);
+            //$("input:radio[name='index'][value="+data[0].index+"]").attr("checked",true);
+       });
+    </script>
+</head>
+<body>
+
+        <form>
+                你更喜欢哪种颜色?<br>
+                <input type="radio" name="parking_index" id="index0" value="0">index0<br>
+                <input type="radio" name="parking_index" id="index1" value="1">index1<br>
+                <input type="radio" name="parking_index" id="index2" value="2">index2
+        </form>
+    
+    
+</body>
+</html>

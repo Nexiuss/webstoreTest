@@ -1,0 +1,39 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+
+    $("p").attr("id","pid");
+    $("p").attr("value","value111");
+    $("p").text("uasdfds")
+    var pid = $("p").attr("id");
+    console.log(pid);
+    onClickFun();
+});
+
+    function onClickFun()
+    {
+        $("input").click(function(){
+           var input = $("input").val();
+           var input2 = $("input").text();
+           console.log(input); 
+        })
+
+        $("p").click(function(){
+           var p = $("p").val();
+           var input2 = $("p").text();
+           var p2 = $("p").html();//对html() and text() method test 确定html和text方法对文本元素都有效，而val对表单元素有效
+           console.log(p); 
+        })
+
+    }
+</script>
+</head>
+<body>
+<p></p>
+<input type="text">
+</body>
+</html>

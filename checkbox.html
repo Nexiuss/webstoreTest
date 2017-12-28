@@ -1,0 +1,48 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+
+fun1()
+
+
+});
+function fun1()
+{
+    $("#del2").click(function()
+    {
+        $(":checkbox").each(function()
+        {
+            if($(this).attr("checked"))
+            {
+                console.log("1")
+
+            }
+            else
+            {
+               console.log("2")
+            }
+        });
+    });
+}
+
+</script>
+</head>
+<body>
+    <div >
+        <ul > </ul>
+        <div ></div>
+    </div>
+
+    <div><button id="del">edit</button></div>
+    <div><button id="del2">delete</button></div>
+    <label><input name="checkbox" type="checkbox" value="" checked="checked"/>苹果 </label>
+    <label><input name="checkbox" type="checkbox" value="" checked="checked"/>桃子 </label>
+    <label><input name="checkbox" type="checkbox" value="" checked="checked"/>香蕉 </label>
+    <label><input name="checkbox" type="checkbox" value="" />梨 </label>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>New Web Project</title>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            show();
+        });
+
+        /* */
+        function show(){    //主流浏览器不兼容ie
+            var s1 = $('#s1').val();
+            if(s1 == 's1_2'){
+               /* $('#s2 option[value="s2_6"]').hide();
+                $('#s2 option[value="s2_7"]').hide();
+                $('#s2 option[value="s2_8"]').hide();
+                $('#s2 option[value="s2_9"]').hide();
+                $('#s2 option[value="s2_10"]').hide();*/
+
+               /* $('#s2_6').hide();
+                $('#s2_7').hide();
+                $('#s2_8').hide();
+                $('#s2_9').hide();
+                $('#s2_10').hide();*/
+
+                $('#s2_6').css("display", "none");
+                $('#s2_7').css("display", "none");
+                $('#s2_8').css("display", "none");
+                $('#s2_9').css("display", "none");
+                $('#s2_10').css("display", "none");
+
+
+              /*  $("#s2").children('option[value="s2_6"]').wrap('<span>').hide();
+                $("#s2").children('option[value="s2_7"]').wrap('<span>').hide();
+                $("#s2").children('option[value="s2_8"]').wrap('<span>').hide();
+                $("#s2").children('option[value="s2_9"]').wrap('<span>').hide();
+                $("#s2").children('option[value="s2_10"]').wrap('<span>').hide();*/
+
+
+                /*document.getElementById('s2_6').style.display = "none";
+                document.getElementById('s2_7').style.display = "none";
+                document.getElementById('s2_8').style.display = "none";
+                document.getElementById('s2_9').style.display = "none";
+                document.getElementById('s2_10').style.display = "none";*/
+            }else{
+                //$('#s2 option[value="s2_6"]').show();
+                //$('#s2 option[value="s2_7"]').show();
+                //$('#s2 option[value="s2_8"]').show();
+                //$('#s2 option[value="s2_9"]').show();
+                //$('#s2 option[value="s2_10"]').show();
+
+                //$('#s2_6').show();
+                //$('#s2_7').show();
+                //$('#s2_8').show();
+                //$('#s2_9').show();
+                //$('#s2_10').show();
+
+                //$('#s2_6').css("display", "");
+                //$('#s2_7').css("display", "");
+                //$('#s2_8').css("display", "");
+                //$('#s2_9').css("display", "");
+                //$('#s2_10').css("display", "");
+
+                //document.getElementById('s2_6').style.display = "block";
+                //document.getElementById('s2_7').style.display = "block";
+                //document.getElementById('s2_8').style.display = "block";
+                //document.getElementById('s2_9').style.display = "block";
+                //document.getElementById('s2_10').style.display = "block";
+
+                $("#s2").children("span").children('option[value="s2_6"]').unwrap();
+                $("#s2").children("span").children('option[value="s2_7"]').unwrap();
+                $("#s2").children("span").children('option[value="s2_8"]').unwrap();
+                $("#s2").children("span").children('option[value="s2_9"]').unwrap();
+                $("#s2").children("span").children('option[value="s2_10"]').unwrap();
+
+                $('#s2 option[value="s2_6"]').show();
+                $('#s2 option[value="s2_7"]').show();
+                $('#s2 option[value="s2_8"]').show();
+                $('#s2 option[value="s2_9"]').show();
+                $('#s2 option[value="s2_10"]').show();
+
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>New Web Project Page</h1>
+
+<!-- -->
+<select id="s1" name="s1" onchange="show()">
+    <option value="s1_1">1</option>
+    <option value="s1_2">2</option>
+</select>
+<select id="s2" name="s2">
+    <option value="s2_1" id="s2_1">1</option>
+    <option value="s2_2" id="s2_2">2</option>
+    <option value="s2_3" id="s2_3">3</option>
+    <option value="s2_4" id="s2_4">4</option>
+    <option value="s2_5" id="s2_5">5</option>
+    <option value="s2_6" id="s2_6">6</option>
+    <option value="s2_7" id="s2_7">7</option>
+    <option value="s2_8" id="s2_8">8</option>
+    <option value="s2_9" id="s2_9">9</option>
+    <option value="s2_10" id="s2_10">10</option>
+</select>
+</body>

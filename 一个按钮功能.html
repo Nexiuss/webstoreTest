@@ -1,0 +1,57 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+
+    var p=$("p");
+    buttonChick("#show", "#hide", "#p");
+
+  /*  $("#show").click(function(){
+        $("#right-guide").css("display", "none")
+    });
+    $("#hide").click(function(){
+        $("#right-guide").css("display", "")
+    });*/
+
+    buttonChick("#show", "#hide", "#right-guide");
+});
+
+//show要显示的元素，hide隐藏的元素，p控制的显示元素；
+function buttonChick(show, hide, p)
+{
+    $(show).hide();
+    $(hide).click(function(){
+        $(p).hide();
+        $(show).show();
+        $(hide).hide();
+    })
+
+    $(show).click(function(){
+        $(p).show();
+        $(show).hide();
+        $(hide).show();
+    })
+}
+</script>
+</head>
+<body>
+<div style="width: 30%">
+
+</div>
+<div style="overflow:auto;background:#E91E63;">
+    <div style="width: 70%;height: 300px;background: #E91E63;float: left">
+        <button id="show" type="button">显示</button>
+        <button id="hide" type="button">隐藏</button>
+    </div>
+
+    <div style="width: 30%;height: 300px;background: #666666;float: right" id="right-guide">
+        <p id="p1">内容1</p>
+        <p id="p2">内容2</p>
+    </div>
+</div>
+
+</body>
+</html>

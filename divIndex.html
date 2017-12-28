@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset=UTF-8>
+<meta name="keywords" content="白菜编辑部">
+<title>白菜编辑部</title>
+<style type="text/css">
+</style>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+    jQuery (function ($)
+    {
+        var div = $ ('div');
+        $ ('button').click (function ()
+        {
+            var left = parseFloat (div.css ('left')) || 0, top = parseFloat (div.css ('top')) || 0;
+            div.css (
+            {
+                left : left + 10 + 'px',
+                top : top + 10 + 'px'
+            });
+        })
+    });
+</script>
+</head>
+<body>
+    <div style="position: absolute; width: 200px; height: 200px; border: 1px solid black;">div</div>
+    <button>move</button>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+           function changeText(id)
+            {
+                var h1id = document.getElementById("h1id");
+                h1id.innerHTML = 'hello!';
+                id.innerHTML="hello2!";
+            }
+        </script>
+    </head>
+<body>
+
+<p id="intro">Hello World!</p>
+
+<script>
+x=document.getElementById("intro");
+document.write(x.firstChild.nodeValue);
+</script>
+<h1 id="h1id" onclick="changeText(this)">这是一级标题1</h1>
+<h1 onclick="this.innerHTML = 'hello!'">这是一级标题2</h1>
+
+</body>
+</html>

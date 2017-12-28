@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="yue-Hans" lang="yue-Hans">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+    <title>it works..............</title>
+</head>
+<body>
+<form action="./" method="get">
+    <dl>
+        <dt>发布者</dt>
+        <dd>
+            <select name="q_role" onchange="role_change_type();">
+                <option value="company">中介</option>
+                <option value="person">个人</option>
+            </select>
+            <select name="q_type">
+                <option value="sale">出售</option>
+                <option value="lease">出租</option>
+                <option value="buy">求购</option>
+                <option value="hire">求租</option>
+            </select>
+        </dd>
+    </dl>
+    <script type="text/javascript">
+        var q_role=document.getElementsByName("q_role");
+        var q_type=document.getElementsByName("q_type");
+        var q_type_option=q_type[0].getElementsByTagName("option");
+        alert(q_role[0].value)
+        if(q_role[0].value=='company')
+        {
+            q_type[0].remove(3)
+            q_type[0].remove(2)
+        }
+        function role_change_type()
+        {
+            if(q_role[0].value=='company')
+            {
+                q_type[0].remove(3)
+                q_type[0].remove(2)
+            }
+            if(q_role[0].value=='person')
+            {
+                var x=document.createElement('option');
+                x.text='求购';
+                x.value='buy';
+                var y=document.createElement('option');
+                y.text='求租';
+                y.value='hire';
+                try
+                {
+                    q_type[0].add(x,null);
+                    q_type[0].add(y,null); // standards compliant
+                }
+                catch(ex)
+                {
+                    q_type[0].add(x);
+                    q_type[0].add(y); // IE only
+                }
+            }
+        }
+    </script>
+</form>
+</body>
+</html>
