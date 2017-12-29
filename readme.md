@@ -1,1 +1,1 @@
-safdasdfasdfa
+一些js的demo，自己测试的一下方法。
