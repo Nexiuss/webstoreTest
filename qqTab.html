@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>SlideView 滑动展示效果 - Liehuo.Net</title>
+</head>
+
+<body>
+    <style type="text/css">
+        .sv3 dl,
+        .sv3 dt,
+        .sv3 dd {
+            padding: 0;
+            margin: 0;
+        }
+
+        .sv3 {
+            width: 240px;
+            border: 1px solid #BFC7D9;
+        }
+
+        .sv3 dl {
+            width: 240px;
+            height: 380px;
+            background: #EDF5FF;
+            overflow: hidden;
+        }
+
+        .sv3 dt {
+            padding: 5px 10px;
+            height: 13px;
+            font-size: 13px;
+            color: #000;
+            background: #E5ECF9;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #BFC7D9;
+        }
+
+        .sv3 dl.on dt {
+            background: #3366CC;
+            color: #FFF;
+            font-weight: bold;
+        }
+
+        .sv3 dd {
+            padding: 10px;
+            color: #333;
+            font-size: 12px;
+            line-height: 1.5em;
+        }
+
+        .sv3 dd a:link,
+        .sv3 dd a:visited,
+        .sv3 dd a:hover,
+        .sv3 dd a:active {
+            color: #333;
+            display: block;
+            text-align: right;
+        }
+    </style>
+    <div id="idSlideView3" class="sv3">
+        <dl>
+            <dt id='group1'>收藏夹1</dt>
+            <dd id='channel110000100002901'>通道1--IPC172.16.3.159</dd>
+        </dl>
+
+        <dl>
+            <dt id='group2'>收藏夹2</dt>
+            <dd id='channel110000100001101'>通道1--NVR</dd>
+        </dl>
+    </div>
+    <script>
+        function SlideView(e, a) {
+            for (var i = 0, o = document.getElementById(e).getElementsByTagName('DL'), d; d = o[i++];)(function (e, c,
+                m, s, t, k, h) {
+                (s = e.style).height = (h = 23) + "px";
+                e.onmouseover = function () {
+                    t = setTimeout(e.open, 200);
+                }
+                e.onmouseout = function () {
+                    clearTimeout(t);
+                }
+                e.open = function () {
+                    if (a == e) return;
+                    c(k);
+                    a && a.close();
+                    (a = e).className = "on";
+                    k = m(function () {
+                        if (h > 379) c(k);
+                        else s.height = (h = Math.min(h + 30, 380)) + "px";
+                    }, 10);
+                }
+                e.close = function () {
+                    c(k);
+                    e.className = "";
+                    k = m(function () {
+                        if (h < 24) c(k);
+                        else s.height = (h = Math.max(h - 30, 23)) + "px";
+                    }, 10);
+                }
+            })(d, clearInterval, setInterval);
+            o[0].open();
+        }
+        new SlideView("idSlideView3");
+    </script>
+</body>
+
+</html>
